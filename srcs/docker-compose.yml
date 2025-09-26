@@ -1,0 +1,9 @@
+name: inception
+
+services:
+  mariadb:
+    container_name: mariadb
+    build: requirements/mariadb
+    restart: always
+    volumes: 
+      - database:/var/lib/mysql
