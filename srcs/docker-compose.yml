@@ -5,5 +5,10 @@ services:
     container_name: mariadb
     build: requirements/mariadb
     restart: always
+    ports:
+      - "3306:3306"
     volumes: 
       - database:/var/lib/mysql
+
+volumes:      
+  database:
