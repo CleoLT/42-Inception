@@ -10,9 +10,9 @@ RUN apt update && \
     apt install -y mariadb-server
 
 
-RUN mkdir -p /var/lib/mysql && \
-    chown -R mysql:mysql /var/lib/mysql && \
-    chmod 777 /var/lib/mysql
+RUN mkdir -p /var/lib/mysql /var/run/mysqld && \
+    chown -R mysql:mysql /var/lib/mysql /var/run/mysqld && \
+    chmod 777 /var/lib/mysql /var/run/mysqld
 
 EXPOSE 3306
 
