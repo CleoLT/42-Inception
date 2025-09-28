@@ -8,7 +8,21 @@ services:
     ports:
       - "3306:3306"
     volumes: 
-      - database:/var/lib/mysql
+      - mariadb_data:/var/lib/mysql
+    env_file: .env
+
 
 volumes:      
-  database:
+  mariadb_data:
+    driver: local
+    driver_opts:
+      type: none
+      device: ${VOLUMES_DIR}mariadb
+      o: bind
+  wordpress_data:
+    driver: local
+    driver_opts:
+      type: none
+      device: ${VOLUMES_DIR}wordpress
+      o: bind
+

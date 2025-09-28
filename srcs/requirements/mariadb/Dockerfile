@@ -4,7 +4,7 @@ VOLUME /var/lib/mysql
 
 COPY ./conf/my.cnf /etc/mysql/my.cnf
 
-COPY --chmod=700 ./tools/start-mariadb.sh /root
+COPY --chmod=700 ./tools/start-mariadb.sh /root/start-mariadb.sh
 
 RUN apt update && \
     apt install -y mariadb-server

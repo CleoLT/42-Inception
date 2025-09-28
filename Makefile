@@ -4,7 +4,8 @@ PINK  = \033[1;35m
 
 
 
-MKDIR = mkdir -p
+MKDIR = mkdir -p 
+CHMOD = chmod 777
 RM    = rm -rf
 
 
@@ -23,6 +24,7 @@ all: volumes build up
 volumes:
 	@echo "$(PINK)making volumes directories...$(RESET)"
 	@$(MKDIR) $(MARIADB_VOL) $(WORDPRESS_VOL)
+	@$(CHMOD) $(MARIADB_VOL) $(WORDPRESS_VOL)
 
 build:
 	@echo "$(PINK)building containers...$(RESET)"
