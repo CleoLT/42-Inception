@@ -37,9 +37,13 @@ up:
 print:
 	@echo "$(PINK)printing containers...$(RESET)"
 	@docker compose -f $(DC_FILE) ps
+
+logs:
+	@echo "$(PINK)printing logs...$(RESET)"
+	@docker compose -f $(DC_FILE) logs
 down:
 	@echo "$(PINK)shutting down containers...$(RESET)"
-	@docker compose -f $(DC_FILE) down
+	@docker compose -f $(DC_FILE) down -v
 
 clean: down
 
