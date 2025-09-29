@@ -1,6 +1,7 @@
 name: inception
 
 services:
+
   mariadb:
     container_name: mariadb
     build: requirements/mariadb
@@ -11,18 +12,36 @@ services:
       - mariadb_data:/var/lib/mysql
     env_file: .env
 
+  wordpress:
+    container_name: wordpress
+    build: requirements/wordpress
+    restart: always
+    ports:
+      - "9000:9000"
+    volumes:
+      - wordpress_data:/var/www/html
+    env_file: .env
 
-volumes:      
+
+
+
+
+volumes:
+
   mariadb_data:
     driver: local
-    driver_opts:
-      type: none
-      device: ${VOLUMES_DIR}mariadb
-      o: bind
+#    driver_opts:
+#      type: none
+#      device: ${VOLUMES_DIR}mariadb
+#      o: bind
+  
   wordpress_data:
     driver: local
-    driver_opts:
-      type: none
-      device: ${VOLUMES_DIR}wordpress
-      o: bind
+#    driver_opts:
+#      type: none
+#      device: ${VOLUMES_DIR}wordpress
+#      o: bind
 
+networks:
+  inception:
+    driver: bridge
