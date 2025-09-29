@@ -9,6 +9,8 @@ RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli
 
 COPY --chmod=700 ./tools/start-wordpress.sh /start-wordpress.sh
 
+WORKDIR /var/www/html
+
 EXPOSE 9000
 
 ENTRYPOINT ["/start-wordpress.sh"]

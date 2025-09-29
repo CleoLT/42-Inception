@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "[ENTRYPOINT] Script iniciado"
+echo "mariadb script iniciado"
 set -x
 
 # Inicializa DB si está vacía

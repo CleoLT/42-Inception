@@ -15,5 +15,3 @@ RUN mkdir -p /var/lib/mysql /var/run/mysqld && \
 EXPOSE 3306
 
 ENTRYPOINT ["/start-mariadb.sh"]
-
-CMD ["mysqld"]
