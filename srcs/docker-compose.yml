@@ -11,6 +11,8 @@ services:
     volumes: 
       - mariadb_data:/var/lib/mysql
     env_file: .env
+    networks: 
+      - inception
 
   wordpress:
     container_name: wordpress
@@ -21,6 +23,10 @@ services:
     volumes:
       - wordpress_data:/var/www/html
     env_file: .env
+    networks: 
+      - inception
+    depends_on: 
+      - mariadb #preciser le statut de mariadb
 
 
 

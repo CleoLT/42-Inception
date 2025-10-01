@@ -44,6 +44,7 @@ logs:
 down:
 	@echo "$(PINK)shutting down containers...$(RESET)"
 	@docker compose -f $(DC_FILE) down -v
+	@docker volume prune -f
 
 clean: down
 
