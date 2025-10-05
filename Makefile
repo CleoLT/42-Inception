@@ -27,6 +27,7 @@ volumes:
 	@$(CHMOD) $(MARIADB_VOL) $(WORDPRESS_VOL)
 
 build:
+	@sudo sh -c 'grep -q "cle-tron.42.fr" /etc/hosts || echo "127.0.0.1 cle-tron.42.fr" >> /etc/hosts'
 	@echo "$(PINK)building containers...$(RESET)"
 	@docker compose -f $(DC_FILE) build
 
