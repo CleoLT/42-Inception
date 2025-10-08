@@ -50,17 +50,17 @@ volumes:
 
   mariadb_data:
     driver: local
-#    driver_opts:
-#      type: none
-#      device: ${VOLUMES_DIR}mariadb
-#      o: bind
+    driver_opts:
+      type: none
+      device: ${VOLUMES_DIR}mariadb
+      o: bind
   
   wordpress_data:
     driver: local
-#    driver_opts:
-#      type: none
-#      device: ${VOLUMES_DIR}wordpress
-#      o: bind
+    driver_opts:
+      type: none
+      device: ${VOLUMES_DIR}wordpress
+      o: bind
 
 networks:
   inception:
